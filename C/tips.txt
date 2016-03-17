@@ -1,0 +1,12 @@
+$ gcc -E hello.c -o hello.i
+hello.c  hello.i
+
+$ gcc -S hello.i -o hello.s
+hello.c  hello.i  hello.s
+
+$ as hello.s -o hello.o  ## gcc -c hello.s -o hello.o
+hello.c  hello.i  hello.o  hello.s
+
+$ gcc hello.o -o hello
+hello  hello.c  hello.i  hello.o  hello.s
+
