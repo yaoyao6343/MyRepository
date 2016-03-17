@@ -146,13 +146,11 @@ def execute_shell(cmd):
 
 class MyDaemon(Daemon):
     def run(self):
-        out = execute_shell("cd /home/koala/NGTDL && ./runtest.sh -V config/env/atcasimca.py --clearlog -t NG1484500 subsystems/traceability/NG1484_design_for_services_ts.txt && cd -")
-        sys.stdout.write('%s\n' % out)
-#         while True:
-#         sys.stdout.write('%s out\n' % time.time())
-#         sys.stdout.flush()
-#         time.sleep(20)
-#         sys.stderr.write('%s err\n' % time.time())
+        while True:
+            sys.stdout.write('%s out\n' % time.time())
+            sys.stdout.flush()
+            time.sleep(20)
+            sys.stderr.write('%s err\n' % time.time())
 
 
 if __name__ == "__main__":
