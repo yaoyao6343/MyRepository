@@ -1,0 +1,28 @@
+[apt-get]
+// Set and use proxy
+$ cat apt_proxy.conf
+Acquire::http::proxy "http://127.0.0.1:8000";
+Acquire::ftp::proxy "ftp://127.0.0.1:8000";
+Acquire::https::proxy "https://127.0.0.1:8000";
+
+$ sudo apt-get -c apt_proxy.conf update
+or
+$ sudo apt-get -o Acquire::http::proxy="http://127.0.0.1:8000/" update
+
+[git]
+// Set and use proxy
+$ cat ~/.gitconfig 
+[http]
+proxy = http://127.0.0.1:8000
+proxy = https://127.0.0.1:8000
+
+// Save user name and password
+$ cat ~/.git-credentials 
+https://user:password@github.com
+
+$ git config --global credential.helper store
+$ cat ~/.gitconfig
+[credential]
+	helper = store
+
+
