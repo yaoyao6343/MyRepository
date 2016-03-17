@@ -1,5 +1,9 @@
-[apt-get]
-// Set and use proxy
+/*
+ ******************************************************************************
+ * apt-get
+ ******************************************************************************
+ */
+/// Set and use proxy
 $ cat apt_proxy.conf
 Acquire::http::proxy "http://127.0.0.1:8000";
 Acquire::ftp::proxy "ftp://127.0.0.1:8000";
@@ -9,14 +13,19 @@ $ sudo apt-get -c apt_proxy.conf update
 or
 $ sudo apt-get -o Acquire::http::proxy="http://127.0.0.1:8000/" update
 
-[git]
-// Set and use proxy
+/*
+ ******************************************************************************
+ * git
+ ******************************************************************************
+ */
+/// Set and use proxy
 $ cat ~/.gitconfig
 [http]
 proxy = http://127.0.0.1:8000
 proxy = https://127.0.0.1:8000
 
-// Save user name and password
+
+/// Save user name and password
 $ cat ~/.git-credentials
 https://user:password@github.com
 
@@ -25,7 +34,8 @@ $ cat ~/.gitconfig
 [credential]
     helper = store
 
-// Save user name and password temporarily
+
+/// Save user name and password temporarily
 $ git config --global credential.helper cache
 # The default timeout is 15 minutes, you can set it more longer
 $ git config --global credential.helper 'cache --timeout=3600'
