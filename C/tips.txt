@@ -1,3 +1,4 @@
+// Compile
 $ gcc -E hello.c -o hello.i
 hello.c  hello.i
 
@@ -9,4 +10,7 @@ hello.c  hello.i  hello.o  hello.s
 
 $ gcc hello.o -o hello
 hello  hello.c  hello.i  hello.o  hello.s
+
+// Check memery leak
+valgrind --tool=memcheck --leak-check=yes --show-reachable=yes ./test
 
