@@ -117,6 +117,12 @@ def some_tricks():
     print "b = 2 if a > 2 else 1"
 
 
+"""
+@summary: Funcitons
+"""
+def func_everyday():
+    print divmod(10, 3)    # (3, 1)
+
 
 
 
@@ -127,4 +133,5 @@ if __name__ == '__main__':
     # var_to_fun()
     # three_sort_func()
     # unittest.main()
-    some_tricks()
+    # some_tricks()
+    func_everyday()
