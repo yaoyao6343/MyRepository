@@ -95,17 +95,17 @@ int string_contain3(char *sa, char *sb)
 int string_contain4(char *sa, char *sb)
 {
     int sa_len = strlen(sa), sb_len = strlen(sb);
-    char hs[128] = {0};
+    unsigned char hs[128] = {0};
     int i = 0;
 
     for (i = 0; i < sa_len; i++)
     {
-        hs[(sa[i])] = 1;
+        hs[(unsigned char)sa[i]] = 1;
     }
 
     for (i = 0; i < sb_len; i++)
     {
-        if (hs[sb[i]] != 1)
+        if (hs[(unsigned char)sb[i]] != 1)
         {
             return RET_NO;
         }
