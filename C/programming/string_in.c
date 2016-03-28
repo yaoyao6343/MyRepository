@@ -120,7 +120,8 @@ int string_contain4(char *sa, char *sb)
  ******************************************************************************
  */
 TEST(StringInTest, Func1)
-{    char a[16] = "Hellow world", b[16] = {0};
+{
+    char a[16] = "Hellow world", b[16] = {0};
 
     strncpy(b, "world", sizeof(b));
     printf("'%s' contains '%s'\n", a, b);
@@ -181,7 +182,7 @@ TEST(StringInTest, Func4)
     printf("'%s' doesn't contains '%s'\n", a, b);
     EXPECT_EQ(string_contain4(a, b), RET_NO);
 
-    strncpy(a, "~!@#$%^&*()_+-={}[]|\\\"';?><,./`124dX:", sizeof(a));
+    strncpy(a, "~!@#$%%^&*()_+-={}[]|\\\"';?><,./`124dX:", sizeof(a));
     puts(a);
     strncpy(b, "HELZZ", sizeof(b));
     printf("'%s' doesn't contains '%s'\n", a, b);
